@@ -66,3 +66,27 @@ projectsData.forEach(project => {
             `;
     projectContainer.insertAdjacentHTML('beforeend', cardHTML);
 });
+
+
+const modal = document.getElementById('modal');
+    const launchBtn = document.getElementById('launchBtn');
+    const closeButtons = document.querySelectorAll('[data-dismiss="modal"]');
+
+    // Open Modal
+    launchBtn.addEventListener('click', () => {
+        modal.classList.add('show');
+    });
+
+    // Close Modal (clicking X or Close button)
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+    });
+
+    // Close when clicking outside the box
+    window.addEventListener('click', (e) => {
+        if (e.target == modal) {
+            modal.classList.remove('show');
+        }
+    });
