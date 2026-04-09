@@ -21,7 +21,7 @@ const projectsData = [
         "link": "https://app.powerbi.com/view?r=eyJrIjoiNjZiMzljMjktNGVjMS00ZjE5LTg1MTAtODllNTNlOTQ0MDA3IiwidCI6IjdlOTNlMjg2LWIyOWEtNDQ1NC1hNDFhLWU4NDE5ZWM5ZGViNSJ9"
     },
     {
-        "title": "Costumer Churn",
+        "title": "Customer Churn",
         "description": "This dashboard provides insights into customer churn by analyzing various factors such as customer demographics, subscription details, and service usage patterns. It highlights key metrics like churn rates, reasons for churn, and retention strategies to help businesses understand and mitigate customer attrition.",
         "image": "./img/Costumer_churn.jpg",
         "link": "https://app.powerbi.com/reportEmbed?reportId=5771c6c5-4024-4921-979b-a97a802f3336&autoAuth=true&ctid=7e93e286-b29a-4454-a41a-e8419ec9deb5"
