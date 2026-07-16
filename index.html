@@ -5,151 +5,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabiano Silva | Data Analyst</title>
+    <meta name="description" content="Fabiano Silva — Data Analyst building BI dashboards, SQL pipelines and data stories. MBA in Data Science candidate at USP.">
     <!-- links -->
     <link rel="icon" href="./img/page_icon.png">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- NAV -->
     <nav>
-        <div class="logo">Fabiano.</div>
+        <a href="#top" class="logo">
+            <span class="cell-ref mono" aria-hidden="true">A1</span>
+            <span class="logo-name">Fabiano Silva</span>
+        </a>
         <div class="nav-links">
+            <a href="#toolkit">Toolkit</a>
             <a href="#projects">Work</a>
             <a href="#experience">Experience</a>
-            <a id="launchBtn" href="javascript:void(0)">Contact</a>
+            <a href="javascript:void(0)" data-open-modal>Contact</a>
         </div>
     </nav>
 
     <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalLabel">Contact</h1>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-group">
-                        <li class="list-group-item"><span style="font-weight: bolder">Email:</span> contact.fabiano.silva@gmail.com</li>
-                        <li class="list-group-item"><span style="font-weight: bolder">Number:</span> +1 (415) 528-0092</li>
-                    </ul>
-                </div>
+            <div class="console-bar modal-titlebar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="console-filename mono" id="modalLabel">contact.query() &mdash; 2 rows returned</span>
+                <button type="button" class="modal-close" data-close-modal aria-label="Close contact panel">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul class="ledger">
+                    <li class="ledger-row">
+                        <span class="ledger-key mono">email</span>
+                        <a class="ledger-value" href="mailto:contact.fabiano.silva@gmail.com">contact.fabiano.silva@gmail.com</a>
+                    </li>
+                    <li class="ledger-row">
+                        <span class="ledger-key mono">phone</span>
+                        <a class="ledger-value" href="tel:+14155280092">+1 (415) 528-0092</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="hero-left">
-            <h1 class="hero-title">Data <br>Analyst<span>.</span></h1>
-            <p class="hero-subtitle">
-                Designing interactive dashboards, optimizing SQL pipelines, and uncovering insights that drive growth.
-                Currently pursuing an MBA in Data Science.
-            </p>
-            <div>
-                <a href="#projects" class="cta-button">View Dashboards</a>
+    <main id="main">
+        <!-- HERO -->
+        <header class="hero" id="top">
+            <div class="hero-left">
+                <p class="eyebrow mono">-- fabiano_silva.sql</p>
+                <p class="query-line mono">
+                    <span id="queryLine"></span><span class="cursor" aria-hidden="true"></span>
+                </p>
+                <h1 class="hero-title">Data <span class="accent">&rarr;</span> Decisions.</h1>
+                <p class="hero-subtitle">
+                    I'm Fabiano Silva, a data analyst who turns messy spreadsheets and SQL tables into
+                    dashboards people actually use. Currently pursuing an MBA in Data Science at USP.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View dashboards</a>
+                    <a href="javascript:void(0)" class="btn btn-ghost" data-open-modal>Get in touch</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-right">
-            <div class="profile-container">
-                <img src="./img/Fabiano.jpg" alt="Fabiano Silva">
+            <div class="hero-right">
+                <div class="console-frame">
+                    <div class="console-bar">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="console-filename mono">fabiano.jpg &mdash; 1 row</span>
+                    </div>
+                    <div class="console-body">
+                        <img src="./img/Fabiano.jpg" alt="Portrait of Fabiano Silva">
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- SKILLS TICKER -->
-    <section class="skills-bar">
-        <marquee behavior="scroll" direction="left" scrollamount="10">
-            <span class="skill-item">Power BI (DAX)</span>
-            <span class="skill-item">Tableau</span>
-            <span class="skill-item">Looker Studio</span>
-            <span class="skill-item">SQL & BigQuery</span>
-            <span class="skill-item">Python (Pandas, NumPy)</span>
-            <span class="skill-item">Databricks</span>
-            <span class="skill-item">ETL/ELT</span>
-            <span class="skill-item">Microsoft Excel (Pivot Table, Vlookup, VBA)</span>
-            <span class="skill-item">Data Storytelling</span>
-        </marquee>
-    </section>
+        <!-- AT A GLANCE (STATS) -->
+        <section class="stats-strip" id="glance">
+            <p class="eyebrow mono light">-- 02: at a glance</p>
+            <div class="stats-grid">
+                <div class="stat-tile">
+                    <span class="cell-ref mono">A1</span>
+                    <span class="stat-number" data-target="50" data-suffix="%">0%</span>
+                    <span class="stat-label">Faster average dashboard load times</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="cell-ref mono">B1</span>
+                    <span class="stat-number" data-target="1000" data-suffix="+" data-comma="true">0</span>
+                    <span class="stat-label">Beekeepers tracked in real time</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="cell-ref mono">C1</span>
+                    <span class="stat-number" data-target="200" data-suffix="+">0</span>
+                    <span class="stat-label">Retail locations analyzed</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="cell-ref mono">A2</span>
+                    <span class="stat-number" data-target="10" data-suffix=" hrs">0</span>
+                    <span class="stat-label">Saved per client, every month</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="cell-ref mono">B2</span>
+                    <span class="stat-number" data-target="2" data-suffix="X">0</span>
+                    <span class="stat-label">Projected revenue growth, new market</span>
+                </div>
+                <div class="stat-tile">
+                    <span class="cell-ref mono">C2</span>
+                    <span class="stat-number" data-target="15" data-suffix="%">0</span>
+                    <span class="stat-label">Lift in local sales from combined data</span>
+                </div>
+            </div>
+        </section>
 
-    <!-- PROJECTS SECTION (Populated via JSON) -->
-    <section id="projects" class="section-projects">
-        <h2 class="section-header">Selected Projects</h2>
+        <!-- TOOLKIT -->
+        <section class="toolkit" id="toolkit">
+            <p class="eyebrow mono">-- 03: toolkit</p>
+            <h2 class="section-title">What I build with</h2>
+            <div class="toolkit-groups">
+                <div class="toolkit-group">
+                    <h3 class="toolkit-group-title mono">visualization</h3>
+                    <ul class="tag-list">
+                        <li>Power BI (DAX)</li>
+                        <li>Tableau</li>
+                        <li>Looker Studio</li>
+                    </ul>
+                </div>
+                <div class="toolkit-group">
+                    <h3 class="toolkit-group-title mono">query &amp; languages</h3>
+                    <ul class="tag-list">
+                        <li>SQL &amp; BigQuery</li>
+                        <li>Python (Pandas, NumPy)</li>
+                    </ul>
+                </div>
+                <div class="toolkit-group">
+                    <h3 class="toolkit-group-title mono">data engineering</h3>
+                    <ul class="tag-list">
+                        <li>Databricks</li>
+                        <li>ETL / ELT</li>
+                    </ul>
+                </div>
+                <div class="toolkit-group">
+                    <h3 class="toolkit-group-title mono">spreadsheets &amp; storytelling</h3>
+                    <ul class="tag-list">
+                        <li>Excel (Pivot Tables, VLOOKUP, VBA)</li>
+                        <li>Data Storytelling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <!-- This container is empty; JS will fill it -->
-        <div id="projects-container" class="projects-grid"></div>
-    </section>
+        <!-- PROJECTS SECTION (Populated via JSON) -->
+        <section id="projects" class="section-projects">
+            <p class="eyebrow mono">-- 04: selected projects</p>
+            <h2 class="section-title">Selected dashboards</h2>
 
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="section-resume">
-        <div class="resume-col">
-            <h2 style="color:var(--color-bg-primary); margin-bottom:30px;">Experience</h2>
+            <!-- This container is empty; JS will fill it -->
+            <div id="projects-container" class="projects-grid"></div>
+        </section>
 
-            <div class="resume-item">
-                <span class="resume-role">Technical Consultant</span>
-                <span class="resume-company">Bee2Be (Brazil)</span>
-                <span class="resume-date">01/2024 - 06/2024</span>
-                <p>- Expanded company's e-commerce footprint to North America, driving a projected 2X revenue increase within six months.<br>
-                   - Built and deployed Power BI dashboards visualizing real-time geolocation data from 1K+ beekeepers, improving tracking accuracy and reducing manual monitoring by 35%.<br>
-                   - Collaborated with executives to define KPIs that aligned data analytics with new market entry goals.</p>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="section-resume">
+            <p class="eyebrow mono">-- 05: experience</p>
+
+            <div class="resume-col">
+                <h2 class="section-title small">Experience</h2>
+                <div class="ledger-header mono">
+                    <span>Role</span>
+                    <span>Period</span>
+                </div>
+
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">Technical Consultant</span>
+                            <span class="resume-company">Bee2Be (Brazil)</span>
+                        </div>
+                        <span class="resume-date mono">01/2024 &ndash; 06/2024</span>
+                    </div>
+                    <p>Expanded the company's e-commerce footprint to North America, driving a projected 2X revenue
+                        increase within six months. Built and deployed Power BI dashboards visualizing real-time
+                        geolocation data from 1K+ beekeepers, improving tracking accuracy and reducing manual
+                        monitoring by 35%. Collaborated with executives to define KPIs that aligned data analytics
+                        with new market entry goals.</p>
+                </div>
+
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">Business Intelligence Analyst</span>
+                            <span class="resume-company">Compart Marketing Solutions</span>
+                        </div>
+                        <span class="resume-date mono">10/2022 &ndash; 09/2023</span>
+                    </div>
+                    <p>Optimized dashboard performance, reducing load times by 50% and enhancing decision-making
+                        speed for 10 clients. Partnered with marketing teams to analyze foot traffic and sales
+                        performance across 200+ retail locations, identifying low-performing zones and improving ad
+                        spend efficiency by 20%. Automated weekly reporting workflows, saving 10 hours per client per
+                        month.</p>
+                </div>
+
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">Business Intelligence Analyst</span>
+                            <span class="resume-company">Eats for You</span>
+                        </div>
+                        <span class="resume-date mono">05/2021 &ndash; 10/2022</span>
+                    </div>
+                    <p>Centralized tracking and reporting systems, creating unified performance dashboards accessed
+                        by leadership and operations. Drove revenue growth by identifying sales patterns and
+                        optimizing delivery coverage. Combined app session data and third-party datasets to identify
+                        new points of sale, increasing local sales by 15%. Reduced reporting turnaround from days to
+                        hours by streamlining SQL and Power BI data pipelines.</p>
+                </div>
             </div>
 
-            <div class="resume-item">
-                <span class="resume-role">Business Intelligence Analyst</span>
-                <span class="resume-company">Compart Marketing Solutions</span>
-                <span class="resume-date">10/2022 - 09/2023</span>
-                <p>- Optimized dashboard performance, reducing load times by 50% and enhancing decision-making speed for 10 clients.<br>
-                   - Partnered with marketing teams to analyze foot traffic and sales performance across 200+ retail locations, identifying low-performing zones and improving ad spend efficiency by 20%.<br>
-                   - Automated weekly reporting workflows, saving 10 hours per client per month.</p>
-            </div>
+            <div class="resume-col">
+                <h2 class="section-title small">Education &amp; Certs</h2>
+                <div class="ledger-header mono">
+                    <span>Program</span>
+                    <span>Period</span>
+                </div>
 
-            <div class="resume-item">
-                <span class="resume-role">Business Intelligence Analyst</span>
-                <span class="resume-company">Eats for You</span>
-                <span class="resume-date">05/2021 - 10/2022</span>
-                <p>- Centralized tracking and reporting systems, creating unified performance dashboards accessed by leadership and operations.<br>
-                   - Drove revenue growth by identifying sales patterns and optimizing delivery coverage.<br>
-                   - Combined app session data and third-party datasets to identify new points of sale, increasing local sales by 15%.<br>
-                   - Reduced reporting turnaround from days to hours by streamlining SQL and Power BI data pipelines.</p>
-            </div>
-        </div>
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">MBA in Data Science &amp; Analytics</span>
+                            <span class="resume-company">USP &ndash; Universidade de S&atilde;o Paulo</span>
+                        </div>
+                        <span class="resume-date mono">2025 &ndash; Present</span>
+                    </div>
+                </div>
 
-        <div class="resume-col">
-            <h2 style="color:var(--color-bg-primary); margin-bottom:30px;">Education & Certs</h2>
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">Bachelor in Software Development</span>
+                            <span class="resume-company">FMU</span>
+                        </div>
+                        <span class="resume-date mono">2019 &ndash; 2021</span>
+                    </div>
+                </div>
 
-            <div class="resume-item">
-                <span class="resume-role">MBA in Data Science & Analytics</span>
-                <span class="resume-company">USP - Universidade de São Paulo</span>
-                <span class="resume-date">2025 - Present</span>
+                <div class="resume-item">
+                    <div class="resume-item-head">
+                        <div>
+                            <span class="resume-role">PL-300: Power BI Data Analyst Associate</span>
+                            <span class="resume-company">Microsoft Certification</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="resume-item">
-                <span class="resume-role">Bachelor in Software Development</span>
-                <span class="resume-company">FMU</span>
-                <span class="resume-date">2019 - 2021</span>
-            </div>
-
-            <div class="resume-item">
-                <span class="resume-role">PL-300: Power BI Data Analyst Associate</span>
-                <span class="resume-company">Microsoft Certification</span>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <h2 style="margin-bottom: 20px;">Let's work together.</h2>
-        <p style="margin-bottom: 30px; opacity: 0.8;">San Francisco Bay Area</p>
+    <footer id="contact">
+        <p class="eyebrow mono light">-- 06: get in touch</p>
+        <h2>Let's build something worth measuring.</h2>
+        <p class="footer-sub">San Francisco Bay Area &middot; Open to Data Analyst &amp; BI roles</p>
 
         <div class="contact-links">
             <a href="mailto:contact.fabiano.silva@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/fabianossilva" target="_blank">LinkedIn</a>
-            <a href="https://github.com/FabiSansi" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/fabianossilva" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/FabiSansi" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.5;">© 2025 Fabiano Silva</p>
+        <p class="fine-print mono">-- end of results &middot; &copy; 2026 Fabiano Silva</p>
     </footer>
     <script src="script.js"></script>
 </body>
